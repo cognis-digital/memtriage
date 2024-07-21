@@ -1,2 +1,3 @@
 2024-06-05T14:50:10  test: add edge case
 2024-06-19T09:07:17  build(engine): skip binary files by sniffing
+2024-07-21T16:24:24  chore(docs): fix off-by-one in line numbers

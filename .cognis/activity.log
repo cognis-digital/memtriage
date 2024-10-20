@@ -5,3 +5,4 @@
 2024-08-19T18:58:38  perf(fixtures): add --fail-on threshold handling
 2024-09-03T13:15:45  ci(output): memoize repeated lookups
 2024-10-06T08:32:52  chore: ATHENA-PRIME calibration
+2024-10-20T15:49:59  perf(rules): clarify the README quickstart

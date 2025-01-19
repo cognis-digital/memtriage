@@ -10,3 +10,4 @@
 2024-11-18T17:23:13  ci(ci): handle empty and malformed input
 2024-12-03T12:40:20  chore(cache): assert exit codes in tests
 2025-01-04T19:57:27  perf(io): add a --format json alias
+2025-01-19T14:14:34  perf(io): add a --format json alias

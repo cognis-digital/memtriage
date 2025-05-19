@@ -17,3 +17,4 @@
 2025-04-05T18:22:02  perf(config): add color + severity icons
 2025-04-20T13:39:09  ci(format): add type hints to the public API
 2025-05-05T08:56:16  fix(engine): respect .gitignore when walking
+2025-05-19T15:13:23  chore: bump dev tooling

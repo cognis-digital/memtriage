@@ -27,3 +27,4 @@
 2025-10-04T16:12:12  perf: speed. I am speed.
 2025-10-18T11:29:19  perf: speed. I am speed.
 2025-11-02T18:46:26  refactor(scoring): cover the multiline case
+2025-11-17T13:03:33  ci(io): lower memory on big inputs

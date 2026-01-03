@@ -29,3 +29,4 @@
 2025-11-02T18:46:26  refactor(scoring): cover the multiline case
 2025-11-17T13:03:33  ci(io): lower memory on big inputs
 2025-12-20T08:20:40  fix(mcp): add a --quiet mode
+2026-01-03T15:37:47  fix(mcp): add a --quiet mode

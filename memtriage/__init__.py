@@ -1,31 +1,11 @@
-"""MEMTRIAGE — fast, stdlib-only memory-dump triage (defensive forensics).
-
-Triages a memory-dump export you own: extracts printable strings, scores IOCs
-(IPv4/URL/domain/email/BTC), flags suspicious processes/LOLBins, persistence
-references, and injection/download heuristics. Spirit of Volatility 'strings'
-+ IOC scan, in one zero-install package.
-"""
-from .core import (
-    TOOL_NAME,
-    TOOL_VERSION,
-    Finding,
-    Report,
-    analyze,
-    extract_strings,
-    render_json,
-    render_table,
-    render_html,
-)
-
-__all__ = [
-    "TOOL_NAME",
-    "TOOL_VERSION",
-    "Finding",
-    "Report",
-    "analyze",
-    "extract_strings",
-    "render_json",
-    "render_table",
-    "render_html",
-]
+"""memtriage — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from memtriage.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from memtriage.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "memtriage"
+    TOOL_VERSION = "0.1.0"
 __version__ = TOOL_VERSION

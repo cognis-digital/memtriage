@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/memtriage",
+  "version": "0.2.0",
+  "description": "JavaScript port of memtriage (Cognis Neural Suite)",
+  "bin": {
+    "memtriage": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}

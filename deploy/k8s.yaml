@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: memtriage, labels: { app: memtriage } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: memtriage } }
+  template:
+    metadata: { labels: { app: memtriage } }
+    spec:
+      containers:
+        - name: memtriage
+          image: ghcr.io/cognis-digital/memtriage:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: memtriage }
+spec:
+  selector: { app: memtriage }
+  ports: [{ port: 80, targetPort: 8000 }]

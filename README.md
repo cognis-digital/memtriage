@@ -36,9 +36,11 @@ Triage memory-dump artifacts: strings, IOCs, suspicious processes from a dump ex
 <a name="features"></a>
 ## Features
 
-- ✅ Todo
-- ✅ Fixme
-- ✅ Xxx
+- ✅ Extract Strings
+- ✅ Analyze
+- ✅ Render Json
+- ✅ Render Table
+- ✅ Render Html
 - ✅ Runs on Linux/macOS/Windows · Docker · devcontainer
 - ✅ Ports in Python, JavaScript, Go, and Rust (`ports/`)
 

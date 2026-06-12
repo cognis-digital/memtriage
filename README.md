@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-memtriage
+pip install "git+https://github.com/cognis-digital/memtriage.git"
 memtriage scan .            # → prioritized findings in seconds
 ```
 
@@ -50,7 +50,7 @@ Triage memory-dump artifacts: strings, IOCs, suspicious processes from a dump ex
 ## Quick start
 
 ```bash
-pip install cognis-memtriage
+pip install "git+https://github.com/cognis-digital/memtriage.git"
 memtriage --version
 memtriage scan .                       # scan current project
 memtriage scan . --format json         # machine-readable

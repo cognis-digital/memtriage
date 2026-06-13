@@ -20,6 +20,34 @@ pip install cognis-memtriage
 memtriage scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+`memtriage` performs defensive triage of a memory-dump export — extracting
+printable strings and flagging findings by severity. Console script: `memtriage`
+(or `python -m memtriage`).
+
+1. **Install** from a clone:
+   ```bash
+   pip install -e .
+   ```
+2. **Triage a dump export** (use `-` to read from stdin):
+   ```bash
+   memtriage triage dump.bin
+   ```
+3. **Write a shareable HTML report** and tune the minimum string length:
+   ```bash
+   memtriage triage dump.bin --format html --min-len 6 -o report.html
+   ```
+4. **Read the output** — `--format json` is pipeline-friendly:
+   ```bash
+   memtriage triage dump.bin --format json | jq '.max_severity, .findings'
+   ```
+   Exit codes: `0` nothing at/above `--fail-on`, `2` findings present, `3` usage/IO error.
+5. **Automate** — gate an incident pipeline on high-severity hits:
+   ```bash
+   memtriage triage dump.bin --fail-on high --format json > triage.json
+   ```
+
 ## Contents
 
 - [Why memtriage?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)

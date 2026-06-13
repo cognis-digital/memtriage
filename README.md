@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/memtriage.git"
 memtriage scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+memtriage is a command-line tool that scans memory-dump files — snapshots taken from a running computer — and flags anything suspicious inside them. It pulls out IP addresses, web links, email addresses, malware-related process names, and signs of common attack techniques, then ranks each finding by how dangerous it looks. Security analysts and incident responders use it to quickly understand what was happening on a compromised machine without needing expensive forensics software.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why memtriage?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -47,6 +53,42 @@ Triage memory-dump artifacts: strings, IOCs, suspicious processes from a dump ex
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`memtriage` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/memtriage/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/memtriage/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/memtriage.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/memtriage.git"  # uv
+pip install "git+https://github.com/cognis-digital/memtriage.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/memtriage.git
+cd memtriage && pip install .
+```
+
+Then run:
+```sh
+memtriage --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
